@@ -1,0 +1,3 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}\\yolo_env\\Scripts\\python.exe"
+}

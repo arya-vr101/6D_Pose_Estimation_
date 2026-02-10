@@ -1,0 +1,11 @@
+{
+    "object": "mug",
+    "frames_processed": 348,
+    "offsets": {
+        "x": -0.0,
+        "y": -0.0,
+        "z": 0.045
+    },
+    "model_path": "C:\\Users\\henna\\Downloads\\6D_Pose_Estimation_\\6D_Pose_Estimation_\\04_dataset_generator\\mug.ply",
+    "video_path": "C:\\Users\\henna\\Downloads\\6D_Pose_Estimation_\\6D_Pose_Estimation_\\04_dataset_generator\\mug.mp4"
+}

@@ -1,0 +1,9 @@
+path: 06_create_splits/LINEMOD_mug
+train: train/images
+val: val/images
+test: test/images
+
+names:
+  0: mug
+
+nc: 1

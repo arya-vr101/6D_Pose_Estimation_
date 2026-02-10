@@ -1,0 +1,13 @@
+{
+    "object": "mug",
+    "total_images": 348,
+    "splits": {
+        "train": 243,
+        "test": 69,
+        "val": 36
+    },
+    "num_classes": 1,
+    "class_names": [
+        "mug"
+    ]
+}
