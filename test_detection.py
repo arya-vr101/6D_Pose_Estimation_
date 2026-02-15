@@ -246,16 +246,16 @@ output_img = img.copy()
 # 1. Draw 3D Position Box (Green wireframe)
 output_img = draw_bounding_box_3d_wireframe(output_img, bbox_3d_2d_3d, color=(0, 255, 0), thickness=1)
 
-# 2. Draw 6D Pose Bounding Box (Blue Edges + White corner dots)
-# Blue in BGR is (255, 0, 0)
-output_img = draw_bounding_box_3d(output_img, bbox_3d_2d_6d, pillar_color=(255, 0, 0), ring_color=(255, 0, 0), thickness=1)
+# 2. Draw 6D Pose Bounding Box (Blue Edges + Cyan corner dots)
+# Blue: (255, 0, 0), Cyan: (255, 255, 0) in BGR
+output_img = draw_bounding_box_3d(output_img, bbox_3d_2d_6d, pillar_color=(255, 0, 0), ring_color=(255, 0, 0), dot_color=(255, 255, 0), thickness=1)
 
 # 3. Draw Orientation Indicator (Red pin/arrow)
 output_img = draw_orientation_arrow(output_img, rvec_mug_final, tvec_mug_final, camera_matrix, dist_coeffs, length=0.06)
 
 print(f"✓ Drew projection lines:")
 print(f"  - 3D Pose Box (Green wireframe - 1.10x scale)")
-print(f"  - 6D Pose Box (Blue edges + Dots)")
+print(f"  - 6D Pose Box (Blue edges + Cyan dots)")
 print(f"  - Orientation Indicator (Red pin pointing UP from center)")
 
 

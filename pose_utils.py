@@ -74,8 +74,8 @@ def draw_bounding_box_2d(img, bbox_2d, color=(0, 255, 0), thickness=2):
     cv2.rectangle(img, (x_min, y_min), (x_max, y_max), color, thickness)
     return img
 
-def draw_bounding_box_3d(img, bbox_3d_2d, pillar_color=(0, 255, 0), ring_color=(255, 0, 0), thickness=1):
-    """Draw 3D bounding box with custom colors for vertical edges (pillars) and horizontal rings"""
+def draw_bounding_box_3d(img, bbox_3d_2d, pillar_color=(0, 255, 0), ring_color=(255, 0, 0), dot_color=(255, 255, 0), thickness=1):
+    """Draw 3D bounding box with custom colors for vertical edges (pillars), horizontal rings, and corner dots"""
     if not np.all(np.isfinite(bbox_3d_2d)):
         return img
         
@@ -95,11 +95,13 @@ def draw_bounding_box_3d(img, bbox_3d_2d, pillar_color=(0, 255, 0), ring_color=(
         for i in range(4):
             cv2.line(img, get_pt(i+4), get_pt(((i+1)%4)+4), ring_color, int(thickness), cv2.LINE_AA)
             
-        # Draw corner dots
+        # Draw corner dots (High-fidelity style)
         for i in range(len(bbox_3d_2d)):
             point = get_pt(i)
-            cv2.circle(img, point, 4, (0, 0, 0), -1)    # Black outline
-            cv2.circle(img, point, 2, (255, 255, 255), -1) # White center
+            # Outer halo/outline (Black)
+            cv2.circle(img, point, 3, (0, 0, 0), -1, cv2.LINE_AA)
+            # Inner fill (Custom color, e.g., Cyan)
+            cv2.circle(img, point, 2, dot_color, -1, cv2.LINE_AA)
     except (ValueError, OverflowError, cv2.error):
         pass
             
